@@ -1,0 +1,27 @@
+*Testes realizados para verificar conectividade*
+
+Testes:
+Ping LAN local
+
+Ping WAN
+
+Ping LAN remota
+
+
+PC1 → Gateway (R1)
+ping 10.0.0.1
+
+PC1 → PC2 (mesma LAN)
+ping 10.0.0.11
+
+PC1 → Interface WAN do R2
+ping 192.168.1.2
+
+PC1 → PC3 (LAN remota)
+ping 20.0.0.10
+
+PC3 → Gateway (R2)
+ping 20.0.0.1
+
+PC3 → PC1 (LAN remota)
+ping 10.0.0.10

@@ -1,0 +1,119 @@
+Rede WAN simples no Cisco Packet Tracer - Passo a Passo
+
+*Objetivo*
+
+Montar um rede WAN simples conectando duas LANs através de dois roteadores, com PCs em cada LAN comunicando-se entre si com a rede remota.
+
+
+*Topologia*
+
+WAN LINK
+        192.168.1.0 /30
+
+        S0/1/0            S0/1/0
+     192.168.1.1      192.168.1.2
+         R1 --------------- R2
+         |                   |
+      G0/0               G0/0
+    10.0.0.1           20.0.0.1
+         |                   |
+       Switch              Switch
+      /      \            /      \
+ PC1          PC2       PC3      PC4
+
+10.0.0.10  10.0.0.11  20.0.0.10  20.0.0.11
+
+
+R1 LAN --> 10.0.0.0/24
+
+R2 LAN --> 20.0.0.0/24
+
+WAN Serial --> 192.168.1.0/30
+
+
+*Endereçamento IP*
+
+R1 G0/0: 10.0.0.1 /24
+R1 S0/1/0: 192.168.1.1 /30
+
+R2 G0/0: 20.0.0.1 /24
+R2 S0/1/0: 192.168.1.2 /30
+
+PC1: 10.0.0.10 /24 Gateway 10.0.0.1
+PC2: 10.0.0.11 /24 Gateway 10.0.0.1
+ 
+PC3: 20.0.0.10 /24 Gateway 20.0.0.1
+PC4: 20.0.0.11 /24 Gateway 20.0.0.1
+
+
+*Configuração do R1*
+
+interface g0/0
+ip address 10.0.0.1 255.255.255.0
+no shutdown
+
+interface s0/1/0
+ip address 192.168.1.1 255.255.255.252
+clock rate 2000000
+no shutdown
+
+ip route 20.0.0.0 255.255.255.0 192.168.1.2
+
+
+*Configuração do R2*
+
+interface g0/0
+ip address 20.0.0.1 255.255.255.0
+no shutdown
+
+interface s0/1/0
+ip address 192.168.1.2 255.255.255.252
+no shutdown
+
+ip route 10.0.0.0 255.255.255.0 192.168.1.1
+
+
+*Testes realizados para verificar conectividade*
+
+Testes:
+Ping LAN local
+
+Ping WAN
+
+Ping LAN remota
+
+
+PC1 → Gateway (R1)
+ping 10.0.0.1
+
+PC1 → PC2 (mesma LAN)
+ping 10.0.0.11
+
+PC1 → Interface WAN do R2
+ping 192.168.1.2
+
+PC1 → PC3 (LAN remota)
+ping 20.0.0.10
+
+PC3 → Gateway (R2)
+ping 20.0.0.1
+
+PC3 → PC1 (LAN remota)
+ping 10.0.0.10
+
+
+
+*Problemas encontrados e soluções*
+
+Problema: A interface LAN do roteador foi configurada com a máscara 255.255.255.252 (/30).
+Isso limitou a rede a apenas 2 endereços IP válidos, impedindo a comunicação entre os PCs
+
+Solução: Alterar a máscara da interface LAN para 255.255.255.0 (/24), permitindo múltiplos dispositivos na rede.
+
+
+
+
+
+
+
+
