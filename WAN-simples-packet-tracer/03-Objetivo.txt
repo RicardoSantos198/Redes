@@ -1,0 +1,3 @@
+*Objetivo*
+
+Montar um rede WAN simples conectando duas LANs através de dois roteadores, com PCs em cada LAN comunicando-se entre si com a rede remota.
