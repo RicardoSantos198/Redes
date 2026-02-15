@@ -1,6 +1,0 @@
-*Problemas encontrados e soluções*
-
-Problema: A interface LAN do roteador foi configurada com a máscara 255.255.255.252 (/30).
-Isso limitou a rede a apenas 2 endereços IP válidos, impedindo a comunicação entre os PCs
-
-Solução: Alterar a máscara da interface LAN para 255.255.255.0 (/24), permitindo múltiplos dispositivos na rede.
