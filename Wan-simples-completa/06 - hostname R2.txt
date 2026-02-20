@@ -1,0 +1,17 @@
+hostname R2
+
+interface gigabitEthernet 0/0
+ip address 20.0.0.1 255.255.255.0
+no shutdown
+
+interface serial 0/1/0
+ip address 192.168.12.2 255.255.255.252
+no shutdown
+
+interface serial 0/1/1
+ip address 192.168.23.1 255.255.255.252
+clock rate 64000
+no shutdown
+
+ip route 10.0.0.0 255.255.255.0 192.168.12.1
+ip route 30.0.0.0 255.255.255.0 192.168.23.2

@@ -1,0 +1,43 @@
+TOPOLOGIA DA REDE WAN – EMPRESA
+
+Filial 1:
+
+PC1
+PC2
+ │
+Switch
+ │
+R1
+ │
+Serial
+ │
+
+Matriz:
+
+R2
+
+ │
+Serial
+ │
+
+Filial 2:
+
+R3
+ │
+Switch
+ │
+PC3
+PC4
+
+Descrição:
+
+Rede LAN conectada a um roteador.
+Roteadores conectados via WAN Serial.
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+hostname R3
+
+interface gigabitEthernet 0/0
+ip address 30.0.0.1 255.255.255.0
+no shutdown
+
+interface serial 0/1/0
+ip address 192.168.23.2 255.255.255.252
+no shutdown
+
+ip route 10.0.0.0 255.255.255.0 192.168.23.1
+ip route 20.0.0.0 255.255.255.0 192.168.23.1

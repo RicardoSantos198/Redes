@@ -1,0 +1,16 @@
+TESTES REALIZADOS
+
+Ping realizado com sucesso entre:
+
+PC1 → PC2
+PC1 → PC3
+PC1 → PC4
+
+PC3 → PC1
+PC3 → PC2
+
+Resultado:
+
+100% sucesso
+
+Comunicação total entre filiais.
