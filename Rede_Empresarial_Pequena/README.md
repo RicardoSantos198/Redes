@@ -82,7 +82,7 @@ configure terminal
 vlan 10
  name ADM
 exit
-
+<br>
 
 <b>2. Configurando as portas de acesso</b>
 
@@ -103,7 +103,7 @@ interface range fastEthernet 0/2-4
  switchport mode access
  switchport access vlan 20
 exit
-
+<br>
 
 <b>3. Configurando uma porta trunk</b>
 
@@ -114,7 +114,7 @@ interface fastEthernet 0/1
 exit
 
 As portas que interligam os switches e o roteador devem ser configuradas de acordo com a topologia, permitindo o transporte das VLANs necessárias.
-
+<br>
 
 <b>4. Configurando o Router-on-a-Stick</b>
 
@@ -139,7 +139,7 @@ interface gigabitEthernet 0/0.20
 exit
 
 Cada subinterface funciona como gateway da respectiva VLAN, possibilitando o roteamento entre as duas redes.
-
+<br>
 
 <b>5. Configurando os pools DHCP</b>
 
@@ -178,27 +178,22 @@ Gateway padrão: verificação da comunicação das estações com os gateways c
 <h2>🔍 Comandos de verificação</h2>
 
 <b>Verificar as VLANs:</b>
-
 show vlan brief
 
 
 <b>Verificar os enlaces trunk:</b>
-
 show interfaces trunk
 
 
 <b>Verificar as interfaces do roteador:</b>
-
 show ip interface brief
 
 
 <b>Verificar os endereços distribuídos pelo DHCP:</b>
-
 show ip dhcp binding
 
 
 <b>Verificar os pools DHCP:</b>
-
 show ip dhcp pool
 
 
