@@ -68,8 +68,11 @@ Gateway padrão	192.168.10.1	192.168.20.1
 Faixa dinâmica	192.168.10.10–254	192.168.20.10–254
 Máscara	255.255.255.0	255.255.255.0
 DNS	8.8.8.8	8.8.8.8
-Nota: Os endereços de 192.168.X.1 a 192.168.X.9 foram reservados para gateways e possíveis equipamentos de infraestrutura, por meio do comando ip dhcp excluded-address.
-🛠️ Tecnologias e Conceitos Aplicados
+
+<u>Nota:</b> Os endereços de 192.168.X.1 a 192.168.X.9 foram reservados para gateways e possíveis equipamentos de infraestrutura, por meio do comando ip dhcp excluded-address.
+
+🛠️ <h2>Tecnologias e Conceitos Aplicados</h2>
+
 Tecnologia	Aplicação no projeto
 VLAN — IEEE 802.1Q	Segmentação lógica da rede em domínios de broadcast independentes
 Trunking	Transporte de tráfego de múltiplas VLANs entre switches e roteador
@@ -78,7 +81,8 @@ DHCP	Distribuição automática de endereços IP e parâmetros de rede
 IPv4 / CIDR	Planejamento e organização do endereçamento das sub-redes
 Cisco IOS CLI	Configuração e verificação dos dispositivos de rede
 Cisco Packet Tracer	Simulação e validação da infraestrutura
-⚙️ Principais Configurações
+
+⚙️ <h2>Principais Configurações</h2>
 
 Os exemplos abaixo representam os principais comandos utilizados na configuração dos dispositivos.
 
@@ -175,7 +179,7 @@ exit
 
 Com essa configuração, os computadores podem obter automaticamente um endereço IP disponível, a máscara de sub-rede, o gateway padrão e o endereço do servidor DNS.
 
-✅ Validação e Testes
+✅ <h2>Validação e Testes</h2>
 
 Após a configuração dos dispositivos, foram realizados testes para verificar o funcionamento da infraestrutura.
 
@@ -184,7 +188,8 @@ Verificação de trunking: o comando show interfaces trunk foi utilizado no swit
 Conectividade na mesma VLAN: testes de comunicação entre computadores do mesmo departamento.
 Conectividade Inter-VLAN: testes de ping entre computadores das redes 192.168.10.0/24 e 192.168.20.0/24.
 Gateway padrão: verificação da comunicação das estações com os gateways configurados nas subinterfaces do roteador.
-🔍 Comandos de verificação
+
+🔍 <h2>Comandos de verificação</h2>
 
 Verificar as VLANs:
 
@@ -219,7 +224,7 @@ Substitua X pelo endereço IP real do computador de destino no departamento Fina
 
 Resultado: a validação do projeto indicou funcionamento do DHCP e comunicação entre as VLANs no ambiente simulado.
 
-📚 Aprendizados
+📚 <h2>Aprendizados</h2>
 
 O desenvolvimento deste projeto permitiu consolidar conhecimentos importantes para a área de infraestrutura e redes de computadores, incluindo:
 
