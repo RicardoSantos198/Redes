@@ -1,4 +1,4 @@
-🚀 <h1>Projeto de Infraestrutura de Rede — Inter-VLAN e DHCP</h1>
+ <h1>🚀 Projeto de Infraestrutura de Rede — Inter-VLAN e DHCP</h1>
 
 <p align="center"> <img src="https://img.shields.io/badge/Cisco-Packet%20Tracer-005691?style=for-the-badge&logo=cisco&logoColor=white" alt="Cisco Packet Tracer"> <img src="https://img.shields.io/badge/Networking-VLANs%20%7C%20DHCP-orange?style=for-the-badge" alt="VLANs e DHCP"> <img src="https://img.shields.io/badge/Routing-Router--on--a--Stick-blue?style=for-the-badge" alt="Router-on-a-Stick"> <img src="https://img.shields.io/badge/Status-Concluído-brightgreen?style=for-the-badge" alt="Projeto concluído"> </p>
 
@@ -76,15 +76,15 @@ Os pools DHCP foram configurados no roteador Cisco IOS para distribuir automatic
 
 Os exemplos abaixo representam os principais comandos utilizados na configuração dos dispositivos.
 
-1. Criando a VLAN 10 — Administrativo
+ <b>1. Criando a VLAN 10 — Administrativo</b>
 enable
 configure terminal
-
 vlan 10
  name ADM
 exit
 
-2. Configurando as portas de acesso
+
+<b>2. Configurando as portas de acesso</b>
 
 Exemplo de configuração das portas destinadas aos computadores do departamento Administrativo:
 
@@ -92,7 +92,6 @@ interface range fastEthernet 0/2-4
  switchport mode access
  switchport access vlan 10
 exit
-
 
 No switch do departamento Financeiro, aplica-se a mesma lógica, utilizando a VLAN 20.
 
@@ -105,7 +104,8 @@ interface range fastEthernet 0/2-4
  switchport access vlan 20
 exit
 
-3. Configurando uma porta trunk
+
+<b>3. Configurando uma porta trunk</b>
 
 Exemplo de configuração da conexão entre um switch de acesso e o switch Core:
 
@@ -113,17 +113,16 @@ interface fastEthernet 0/1
  switchport mode trunk
 exit
 
-
 As portas que interligam os switches e o roteador devem ser configuradas de acordo com a topologia, permitindo o transporte das VLANs necessárias.
 
-4. Configurando o Router-on-a-Stick
+
+<b>4. Configurando o Router-on-a-Stick</b>
 
 Primeiro, habilite a interface física que conecta o roteador ao switch Core:
 
 interface gigabitEthernet 0/0
  no shutdown
 exit
-
 
 Em seguida, configure a subinterface correspondente à VLAN 10:
 
@@ -132,7 +131,6 @@ interface gigabitEthernet 0/0.10
  ip address 192.168.10.1 255.255.255.0
 exit
 
-
 E a subinterface da VLAN 20:
 
 interface gigabitEthernet 0/0.20
@@ -140,10 +138,10 @@ interface gigabitEthernet 0/0.20
  ip address 192.168.20.1 255.255.255.0
 exit
 
-
 Cada subinterface funciona como gateway da respectiva VLAN, possibilitando o roteamento entre as duas redes.
 
-5. Configurando os pools DHCP
+
+<b>5. Configurando os pools DHCP</b>
 
 Pool DHCP — Administrativo
 
@@ -155,7 +153,6 @@ ip dhcp pool POOL-ADM
  dns-server 8.8.8.8
 exit
 
-
 Pool DHCP — Financeiro
 
 ip dhcp excluded-address 192.168.20.1 192.168.20.9
@@ -165,7 +162,6 @@ ip dhcp pool POOL-FIN
  default-router 192.168.20.1
  dns-server 8.8.8.8
 exit
-
 
 Com essa configuração, os computadores podem obter automaticamente um endereço IP disponível, a máscara de sub-rede, o gateway padrão e o endereço do servidor DNS.
 
@@ -181,38 +177,38 @@ Gateway padrão: verificação da comunicação das estações com os gateways c
 
 <h2>🔍 Comandos de verificação</h2>
 
-Verificar as VLANs:
+<b>Verificar as VLANs:</b>
 
 show vlan brief
 
 
-Verificar os enlaces trunk:
+<b>Verificar os enlaces trunk:</b>
 
 show interfaces trunk
 
 
-Verificar as interfaces do roteador:
+<b>Verificar as interfaces do roteador:</b>
 
 show ip interface brief
 
 
-Verificar os endereços distribuídos pelo DHCP:
+<b>Verificar os endereços distribuídos pelo DHCP:</b>
 
 show ip dhcp binding
 
 
-Verificar os pools DHCP:
+<b>Verificar os pools DHCP:</b>
 
 show ip dhcp pool
 
 
-Testar a conectividade entre departamentos:
+<b>Testar a conectividade entre departamentos:</b>
 
 ping 192.168.20.X
 
 Substitua X pelo endereço IP real do computador de destino no departamento Financeiro. O teste inverso também pode ser realizado a partir de um computador da VLAN 20 para um endereço da VLAN 10.
 
-Resultado: a validação do projeto indicou funcionamento do DHCP e comunicação entre as VLANs no ambiente simulado.
+<b>Resultado: a validação do projeto indicou funcionamento do DHCP e comunicação entre as VLANs no ambiente simulado.</b>
 
 <h2>📚 Aprendizados</h2>
 
