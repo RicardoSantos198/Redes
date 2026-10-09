@@ -1,10 +1,10 @@
-🚀 Projeto de Infraestrutura de Rede — Inter-VLAN & DHCP
+🚀 <h1>Projeto de Infraestrutura de Rede — Inter-VLAN e DHCP</h1>
 
 <p align="center"> <img src="https://img.shields.io/badge/Cisco-Packet%20Tracer-005691?style=for-the-badge&logo=cisco&logoColor=white" alt="Cisco Packet Tracer"> <img src="https://img.shields.io/badge/Networking-VLANs%20%7C%20DHCP-orange?style=for-the-badge" alt="VLANs e DHCP"> <img src="https://img.shields.io/badge/Routing-Router--on--a--Stick-blue?style=for-the-badge" alt="Router-on-a-Stick"> <img src="https://img.shields.io/badge/Status-Concluído-brightgreen?style=for-the-badge" alt="Projeto concluído"> </p>
 
 <p align="center"> <strong>🌐 Segmentação de rede corporativa, atribuição dinâmica de IP e comunicação entre VLANs.</strong> </p>
 
-📌 Sobre o Projeto
+📌 <h2>Sobre o Projeto</h2>
 
 Este projeto consiste na implementação de uma infraestrutura de rede corporativa utilizando o Cisco Packet Tracer, com o objetivo de aplicar, na prática, conceitos fundamentais de redes de computadores.
 
@@ -14,14 +14,15 @@ Além disso, foi configurado um serviço DHCP diretamente no roteador Cisco IOS 
 
 💡 O projeto foi desenvolvido como parte da consolidação dos conhecimentos adquiridos nos cursos de redes da Alura, reforçando conceitos de switching, roteamento, endereçamento IPv4 e serviços de rede.
 
-🎯 Objetivos
+🎯 <h2>Objetivos</h2>
 Implementar VLANs para segmentar os departamentos da empresa.
 Configurar portas de acesso e links trunk com encapsulamento IEEE 802.1Q.
 Implementar o roteamento entre VLANs utilizando Router-on-a-Stick.
 Configurar pools DHCP para atribuição automática de endereços IP.
 Definir gateways padrão e servidores DNS para as estações.
 Validar a conectividade entre os computadores por meio de testes de comunicação.
-🗺️ Topologia da Rede
+
+🗺️ <h2>Topologia da Rede</h2>
 
 A topologia é composta por 1 roteador principal, 1 switch Core, 2 switches de acesso e 6 computadores, distribuídos entre os departamentos Administrativo e Financeiro.
 
@@ -49,11 +50,13 @@ A topologia é composta por 1 roteador principal, 1 switch Core, 2 switches de a
           VLAN 10 — ADM             VLAN 20 — FIN
           192.168.10.0/24            192.168.20.0/24
 
-🔌 Componentes da Infraestrutura
-Dispositivo	Quantidade	Função
-Roteador Cisco	1	Roteamento entre VLANs e serviço DHCP
-Switch Core	1	Agregação e distribuição dos links trunk
-Switches de acesso	2	Conexão dos computadores aos respectivos departamentos
+🔌 <h2>Componentes da Infraestrutura</h2>
+
+<b>Dispositivo</b>         |<b>Quantidade</b>|<b>Função</b>
+Roteador Cisco      |    1     |Roteamento entre VLANs e serviço DHCP
+Switch Core	        |    1	   |Agregação e distribuição dos links trunk
+Switches de acesso  |    2	   |Conexão dos computadores aos respectivos departamentos
+       |
 Computadores	6	Estações de trabalho para testes de conectividade
 📊 Plano de Endereçamento IP
 
