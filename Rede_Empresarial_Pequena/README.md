@@ -76,12 +76,13 @@ Os pools DHCP foram configurados no roteador Cisco IOS para distribuir automatic
 
 Os exemplos abaixo representam os principais comandos utilizados na configuração dos dispositivos.
 
- <b>1. Criando a VLAN 10 — Administrativo</b>
+ <b>1. Criando a VLAN 10 — Administrativo</b><br>
 enable
 configure terminal
 vlan 10
  name ADM
 exit
+<br>
 <br>
 
 <b>2. Configurando as portas de acesso</b>
@@ -104,6 +105,7 @@ interface range fastEthernet 0/2-4
  switchport access vlan 20
 exit
 <br>
+<br>
 
 <b>3. Configurando uma porta trunk</b>
 
@@ -114,6 +116,7 @@ interface fastEthernet 0/1
 exit
 
 As portas que interligam os switches e o roteador devem ser configuradas de acordo com a topologia, permitindo o transporte das VLANs necessárias.
+<br>
 <br>
 
 <b>4. Configurando o Router-on-a-Stick</b>
@@ -139,6 +142,7 @@ interface gigabitEthernet 0/0.20
 exit
 
 Cada subinterface funciona como gateway da respectiva VLAN, possibilitando o roteamento entre as duas redes.
+<br>
 <br>
 
 <b>5. Configurando os pools DHCP</b>
