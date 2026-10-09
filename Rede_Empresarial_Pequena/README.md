@@ -52,13 +52,9 @@ A topologia é composta por 1 roteador principal, 1 switch Core, 2 switches de a
 
 🔌 <h2>Componentes da Infraestrutura</h2>
 
-<b>Dispositivo</b>         |<b>Quantidade</b>|<b>Função</b>
-Roteador Cisco      |    1     |Roteamento entre VLANs e serviço DHCP
-Switch Core	        |    1	   |Agregação e distribuição dos links trunk
-Switches de acesso  |    2	   |Conexão dos computadores aos respectivos departamentos
-       |
-Computadores	6	Estações de trabalho para testes de conectividade
-📊 Plano de Endereçamento IP
+<ul> <li>🌐 <strong>Roteador Cisco (1)</strong> — Responsável pelo roteamento entre VLANs e pelo serviço DHCP.</li> <li>🔀 <strong>Switch Core (1)</strong> — Responsável pela agregação e distribuição dos links trunk.</li> <li>🔗 <strong>Switches de acesso (2)</strong> — Responsáveis pela conexão dos computadores aos respectivos departamentos.</li> <li>💻 <strong>Computadores (6)</strong> — Estações de trabalho utilizadas nos testes de conectividade e comunicação entre VLANs.</li> </ul>
+
+📊 <h2>Plano de Endereçamento IP</h2>
 
 A rede foi dividida em duas sub-redes IPv4, cada uma associada a uma VLAN e a um gateway específico.
 
