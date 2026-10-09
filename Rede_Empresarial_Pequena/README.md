@@ -77,11 +77,11 @@ Os pools DHCP foram configurados no roteador Cisco IOS para distribuir automatic
 Os exemplos abaixo representam os principais comandos utilizados na configuração dos dispositivos.
 
  <b>1. Criando a VLAN 10 — Administrativo</b><br>
-enable
-configure terminal
-vlan 10
- name ADM
-exit
+enable<br>
+configure terminal<br>
+vlan 10<br>
+ name ADM<br>
+exit<br>
 <br>
 <br>
 
@@ -89,21 +89,21 @@ exit
 
 Exemplo de configuração das portas destinadas aos computadores do departamento Administrativo:
 
-interface range fastEthernet 0/2-4
- switchport mode access
- switchport access vlan 10
-exit
+interface range fastEthernet 0/2-4<br>
+ switchport mode access<br>
+ switchport access vlan 10<br>
+exit<br>
 
 No switch do departamento Financeiro, aplica-se a mesma lógica, utilizando a VLAN 20.
 
-vlan 20
- name FIN
-exit
+vlan 20<br>
+ name FIN<br>
+exit<br>
 
-interface range fastEthernet 0/2-4
- switchport mode access
- switchport access vlan 20
-exit
+interface range fastEthernet 0/2-4<br>
+ switchport mode access<br>
+ switchport access vlan 20<br>
+exit<br>
 <br>
 <br>
 
@@ -111,9 +111,9 @@ exit
 
 Exemplo de configuração da conexão entre um switch de acesso e o switch Core:
 
-interface fastEthernet 0/1
- switchport mode trunk
-exit
+interface fastEthernet 0/1<br>
+ switchport mode trunk<br>
+exit<br>
 
 As portas que interligam os switches e o roteador devem ser configuradas de acordo com a topologia, permitindo o transporte das VLANs necessárias.
 <br>
@@ -123,23 +123,23 @@ As portas que interligam os switches e o roteador devem ser configuradas de acor
 
 Primeiro, habilite a interface física que conecta o roteador ao switch Core:
 
-interface gigabitEthernet 0/0
- no shutdown
-exit
+interface gigabitEthernet 0/0<br>
+ no shutdown<br>
+exit<br>
 
-Em seguida, configure a subinterface correspondente à VLAN 10:
+Em seguida, configure a subinterface correspondente à VLAN 10:<br>
 
-interface gigabitEthernet 0/0.10
- encapsulation dot1Q 10
- ip address 192.168.10.1 255.255.255.0
-exit
+interface gigabitEthernet 0/0.10<br>
+ encapsulation dot1Q 10<br>
+ ip address 192.168.10.1 255.255.255.0<br>
+exit<br>
 
-E a subinterface da VLAN 20:
+E a subinterface da VLAN 20:<br>
 
-interface gigabitEthernet 0/0.20
- encapsulation dot1Q 20
- ip address 192.168.20.1 255.255.255.0
-exit
+interface gigabitEthernet 0/0.20<br>
+ encapsulation dot1Q 20<br>
+ ip address 192.168.20.1 255.255.255.0<br>
+exit<br>
 
 Cada subinterface funciona como gateway da respectiva VLAN, possibilitando o roteamento entre as duas redes.
 <br>
@@ -147,25 +147,25 @@ Cada subinterface funciona como gateway da respectiva VLAN, possibilitando o rot
 
 <b>5. Configurando os pools DHCP</b>
 
-Pool DHCP — Administrativo
+Pool DHCP — Administrativo<br>
 
-ip dhcp excluded-address 192.168.10.1 192.168.10.9
+ip dhcp excluded-address 192.168.10.1 192.168.10.9<br>
 
-ip dhcp pool POOL-ADM
- network 192.168.10.0 255.255.255.0
- default-router 192.168.10.1
- dns-server 8.8.8.8
-exit
+ip dhcp pool POOL-ADM<br>
+ network 192.168.10.0 255.255.255.0<br>
+ default-router 192.168.10.1<br>
+ dns-server 8.8.8.8<br>
+exit<br>
 
-Pool DHCP — Financeiro
+Pool DHCP — Financeiro<br>
 
-ip dhcp excluded-address 192.168.20.1 192.168.20.9
+ip dhcp excluded-address 192.168.20.1 192.168.20.9<br>
 
-ip dhcp pool POOL-FIN
- network 192.168.20.0 255.255.255.0
- default-router 192.168.20.1
- dns-server 8.8.8.8
-exit
+ip dhcp pool POOL-FIN<br>
+ network 192.168.20.0 255.255.255.0<br>
+ default-router 192.168.20.1<br>
+ dns-server 8.8.8.8<br>
+exit<br>
 
 Com essa configuração, os computadores podem obter automaticamente um endereço IP disponível, a máscara de sub-rede, o gateway padrão e o endereço do servidor DNS.
 
