@@ -4,7 +4,7 @@
 
 <p align="center"> <strong>🌐 Segmentação de rede corporativa, atribuição dinâmica de IP e comunicação entre VLANs.</strong> </p>
 
-📌 <h2>Sobre o Projeto</h2>
+<h2>📌 Sobre o Projeto</h2>
 
 Este projeto consiste na implementação de uma infraestrutura de rede corporativa utilizando o Cisco Packet Tracer, com o objetivo de aplicar, na prática, conceitos fundamentais de redes de computadores.
 
@@ -22,7 +22,7 @@ Configurar pools DHCP para atribuição automática de endereços IP.
 Definir gateways padrão e servidores DNS para as estações.
 Validar a conectividade entre os computadores por meio de testes de comunicação.
 
-🗺️ <h2>Topologia da Rede</h2>
+<h2>🗺️ Topologia da Rede</h2>
 
 A topologia é composta por 1 roteador principal, 1 switch Core, 2 switches de acesso e 6 computadores, distribuídos entre os departamentos Administrativo e Financeiro.
 
@@ -50,28 +50,25 @@ A topologia é composta por 1 roteador principal, 1 switch Core, 2 switches de a
           VLAN 10 — ADM             VLAN 20 — FIN
           192.168.10.0/24            192.168.20.0/24
 
-🔌 <h2>Componentes da Infraestrutura</h2>
+<h2>🔌Componentes da Infraestrutura</h2>
 
 <ul> <li>🌐 <strong>Roteador Cisco (1)</strong> — Responsável pelo roteamento entre VLANs e pelo serviço DHCP.</li> <li>🔀 <strong>Switch Core (1)</strong> — Responsável pela agregação e distribuição dos links trunk.</li> <li>🔗 <strong>Switches de acesso (2)</strong> — Responsáveis pela conexão dos computadores aos respectivos departamentos.</li> <li>💻 <strong>Computadores (6)</strong> — Estações de trabalho utilizadas nos testes de conectividade e comunicação entre VLANs.</li> </ul>
 
-📊 <h2>Plano de Endereçamento IP</h2>
+<h2>📊 Plano de Endereçamento IP</h2>
 
-A rede foi dividida em duas sub-redes IPv4, cada uma associada a uma VLAN e a um gateway específico.
+A infraestrutura foi segmentada em duas sub-redes IPv4, cada uma associada a uma VLAN específica, com gateway próprio para permitir o roteamento entre os departamentos.
 
-Departamento	VLAN	Nome	Sub-rede	Gateway
-Administrativo	10	ADM	192.168.10.0/24	192.168.10.1
-Financeiro	20	FIN	192.168.20.0/24	192.168.20.1
-📡 Configuração DHCP
-Parâmetro	VLAN 10 — ADM	VLAN 20 — FIN
-Rede	192.168.10.0/24	192.168.20.0/24
-Gateway padrão	192.168.10.1	192.168.20.1
-Faixa dinâmica	192.168.10.10–254	192.168.20.10–254
-Máscara	255.255.255.0	255.255.255.0
-DNS	8.8.8.8	8.8.8.8
+<table> <thead> <tr> <th>🏢 Departamento</th> <th>🆔 VLAN</th> <th>🏷️ Nome</th> <th>🌐 Sub-rede</th> <th>🚪 Gateway</th> </tr> </thead> <tbody> <tr> <td>Administrativo</td> <td align="center">10</td> <td><code>ADM</code></td> <td><code>192.168.10.0/24</code></td> <td><code>192.168.10.1</code></td> </tr> <tr> <td>Financeiro</td> <td align="center">20</td> <td><code>FIN</code></td> <td><code>192.168.20.0/24</code></td> <td><code>192.168.20.1</code></td> </tr> </tbody> </table>
 
-<u>Nota:</b> Os endereços de 192.168.X.1 a 192.168.X.9 foram reservados para gateways e possíveis equipamentos de infraestrutura, por meio do comando ip dhcp excluded-address.
+<h2>📡 Configuração DHCP</h2>
 
-🛠️ <h2>Tecnologias e Conceitos Aplicados</h2>
+Os pools DHCP foram configurados no roteador Cisco IOS para distribuir automaticamente os parâmetros de rede aos computadores de cada departamento.
+
+<table> <thead> <tr> <th>⚙️ Parâmetro</th> <th>🟠 VLAN 10 — ADM</th> <th>🔵 VLAN 20 — FIN</th> </tr> </thead> <tbody> <tr> <td><strong>Rede</strong></td> <td><code>192.168.10.0/24</code></td> <td><code>192.168.20.0/24</code></td> </tr> <tr> <td><strong>Gateway padrão</strong></td> <td><code>192.168.10.1</code></td> <td><code>192.168.20.1</code></td> </tr> <tr> <td><strong>Faixa dinâmica</strong></td> <td><code>192.168.10.10–254</code></td> <td><code>192.168.20.10–254</code></td> </tr> <tr> <td><strong>Máscara de sub-rede</strong></td> <td><code>255.255.255.0</code></td> <td><code>255.255.255.0</code></td> </tr> <tr> <td><strong>Servidor DNS</strong></td> <td><code>8.8.8.8</code></td> <td><code>8.8.8.8</code></td> </tr> </tbody> </table>
+
+💡 Nota técnica: os endereços de 192.168.X.1 até 192.168.X.9 foram excluídos da distribuição dinâmica por meio do comando ip dhcp excluded-address, reservando-os para os gateways e possíveis equipamentos de infraestrutura.
+
+<h2>🛠️ Tecnologias e Conceitos Aplicados</h2>
 
 Tecnologia	Aplicação no projeto
 VLAN — IEEE 802.1Q	Segmentação lógica da rede em domínios de broadcast independentes
@@ -82,7 +79,7 @@ IPv4 / CIDR	Planejamento e organização do endereçamento das sub-redes
 Cisco IOS CLI	Configuração e verificação dos dispositivos de rede
 Cisco Packet Tracer	Simulação e validação da infraestrutura
 
-⚙️ <h2>Principais Configurações</h2>
+<h2>⚙️ Principais Configurações</h2>
 
 Os exemplos abaixo representam os principais comandos utilizados na configuração dos dispositivos.
 
@@ -179,7 +176,7 @@ exit
 
 Com essa configuração, os computadores podem obter automaticamente um endereço IP disponível, a máscara de sub-rede, o gateway padrão e o endereço do servidor DNS.
 
-✅ <h2>Validação e Testes</h2>
+<h2>✅ Validação e Testes</h2>
 
 Após a configuração dos dispositivos, foram realizados testes para verificar o funcionamento da infraestrutura.
 
@@ -189,7 +186,7 @@ Conectividade na mesma VLAN: testes de comunicação entre computadores do mesmo
 Conectividade Inter-VLAN: testes de ping entre computadores das redes 192.168.10.0/24 e 192.168.20.0/24.
 Gateway padrão: verificação da comunicação das estações com os gateways configurados nas subinterfaces do roteador.
 
-🔍 <h2>Comandos de verificação</h2>
+<h2>🔍 Comandos de verificação</h2>
 
 Verificar as VLANs:
 
@@ -224,7 +221,7 @@ Substitua X pelo endereço IP real do computador de destino no departamento Fina
 
 Resultado: a validação do projeto indicou funcionamento do DHCP e comunicação entre as VLANs no ambiente simulado.
 
-📚 <h2>Aprendizados</h2>
+<h2>📚 Aprendizados</h2>
 
 O desenvolvimento deste projeto permitiu consolidar conhecimentos importantes para a área de infraestrutura e redes de computadores, incluindo:
 
