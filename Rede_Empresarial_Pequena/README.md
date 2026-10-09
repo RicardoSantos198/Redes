@@ -70,14 +70,7 @@ Os pools DHCP foram configurados no roteador Cisco IOS para distribuir automatic
 
 <h2>🛠️ Tecnologias e Conceitos Aplicados</h2>
 
-Tecnologia	Aplicação no projeto
-VLAN — IEEE 802.1Q	Segmentação lógica da rede em domínios de broadcast independentes
-Trunking	Transporte de tráfego de múltiplas VLANs entre switches e roteador
-Router-on-a-Stick	Roteamento entre VLANs utilizando subinterfaces em uma única interface física
-DHCP	Distribuição automática de endereços IP e parâmetros de rede
-IPv4 / CIDR	Planejamento e organização do endereçamento das sub-redes
-Cisco IOS CLI	Configuração e verificação dos dispositivos de rede
-Cisco Packet Tracer	Simulação e validação da infraestrutura
+<ul> <li>🔀 <strong>VLAN — IEEE 802.1Q:</strong> Segmentação lógica da rede em domínios de broadcast independentes.</li> <li>🔗 <strong>Trunking:</strong> Transporte de tráfego de múltiplas VLANs entre switches e roteador.</li> <li>🌐 <strong>Router-on-a-Stick:</strong> Roteamento entre VLANs utilizando subinterfaces em uma única interface física.</li> <li>📡 <strong>DHCP:</strong> Distribuição automática de endereços IP e parâmetros de rede.</li> <li>🖧 <strong>IPv4 / CIDR:</strong> Planejamento e organização do endereçamento das sub-redes.</li> <li>⌨️ <strong>Cisco IOS CLI:</strong> Configuração e verificação dos dispositivos de rede por linha de comando.</li> <li>💻 <strong>Cisco Packet Tracer:</strong> Simulação, implementação e validação da infraestrutura de rede.</li> </ul>
 
 <h2>⚙️ Principais Configurações</h2>
 
